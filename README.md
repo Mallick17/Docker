@@ -5,7 +5,7 @@ Docker & Docker-Composer Installation and forecoming commands.
 ### Installation of Docker Commands
 
 This is an example of how to list things you need to use the software and how to install them.
-* Docker Installation Commands for Linux Server
+* Docker Installation Commands for Linux Server in .sh file.
   ```sh
   sudo yum update -y
   sudo yum search docker
@@ -17,14 +17,14 @@ This is an example of how to list things you need to use the software and how to
   docker --version
   ```
 
-* Docker Compose Installation Commands for Linux Server
+* Docker-Compose Installation Commands for Linux Server in .sh file.
   ```sh
   sudo yum install git -y
   sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose 
   sudo chmod +x /usr/local/bin/docker-compose
   docker-compose --version
   ```
-* Docker Hands on File commands for Linux Commands
+* Hands on Docker-File in Docker for Linux in .sh file
   ```sh
   FROM amazonlinux
   MAINTAINER "gyanaranjanmallick444@gmail.com"
@@ -35,4 +35,15 @@ This is an example of how to list things you need to use the software and how to
   RUN tar -zxvf apache-tomcat-9.0.91.tar.gz
   RUN yum install java-11* -y
   RUN sh /apache-tomcat-9.0.91/bin/startup.sh
+  ```
+* Docker-File in Docker for Linux in .sh file.
+  ```sh
+ 
+  yum install wget -y
+  wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz
+  yum install tar -y 
+  yum install gzip -y
+  tar -zxvf apache-tomcat-9.0.91.tar.gz
+  yum install java-11* -y
+  sh /apache-tomcat-9.0.91/bin/startup.sh
   ```
