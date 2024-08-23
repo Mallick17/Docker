@@ -12,6 +12,11 @@ Commands and Installation and Study Notes
   sudo systemctl status docker.service
   docker --version
   ```
+  ## Task-1
+  ## Task-2
+  ## Task-3
+  ## Task-4
+  ## Task-5
 
 # Docker-Compose Setup on Linux
   ```sh
@@ -20,6 +25,8 @@ Commands and Installation and Study Notes
   sudo chmod +x /usr/local/bin/docker-compose
   docker-compose --version
   ```
+  ## Task-1
+  
 # Docker-File Setup on Linux
   ```sh
  
@@ -43,6 +50,11 @@ Commands and Installation and Study Notes
   RUN yum install java-11* -y
   RUN sh /apache-tomcat-9.0.91/bin/startup.sh
   ```
+  ## Task-1
+  
+# Docker Volume on Linux
+  ## Task-1
+  
 # Docker Swarm Setup on Linux
   ## Steps
 
