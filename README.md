@@ -54,6 +54,6 @@ This is an example of how to list things you need to use the software and how to
   | Docker Installation  | Docker Installation  |
   | docker swarm init   |   | docker swarm joint |
   | copy the link generated   |   | paste the link generated from Docker-Master |
-  | docker swarm init   |   | docker swarm joint |
-  | docker swarm init   |   | docker swarm joint |
-  | docker swarm init   |   | docker swarm joint |
+  | docker node ls   |   | docker images |
+  |    |   | docker ps |
+  | socker node promote worker   |   |  |
