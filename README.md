@@ -52,4 +52,4 @@ This is an example of how to list things you need to use the software and how to
   | Docker-Master  | Docker-Worker |
   | ------------- | ------------- |
   | Docker Installation  | Docker Installation  |
-  | Content Cell  | Content Cell  |
+  | docker swarm init   |   | docker swarm joint |
