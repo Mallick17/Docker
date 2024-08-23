@@ -1,10 +1,6 @@
 # Docker
 Commands and Installation and Study Notes
-# Docker
-Docker & Docker-Composer Installation and forecoming commands.
 ### Installation of Docker Commands
-
-This is an example of how to list things you need to use the software and how to install them.
 # Docker Setup on Linux
   ```sh
   sudo yum update -y
