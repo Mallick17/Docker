@@ -17,19 +17,19 @@ Commands and Installation and Study Notes
   ```
 docker images    ##Lists available images on the system; used to check image availability.
 docker ps    ##Shows running containers; used to monitor active containers.  
-docker pull httpd    ##Downloads the ```httpd``` image from Docker Hub; used to prepare an image.
-docker images
-docker run -it -d httpd
+docker pull httpd    ##Downloads the httpd image from Docker Hub; used to prepare an image.
+docker images    
+docker run -it -d httpd    ##Starts an httpd container in detached interactive mode; used to deploy containers. 
 docker ps
-docker rm container_id
-docker stop container_id
-docker ps -a
-docker start container_id
+docker rm container_id    ##Removes a stopped container; used to free resources.
+docker stop container_id    ##Stops a running container; used to halt container processes.
+docker ps -a    ##Lists all containers (running and stopped); used for full container visibility.
+docker start container_id    ##Restarts a stopped container; used to resume operations.
 docker stop container_id
 docker rm container_id
 docker ps -a
 docker images
-docker rmi httpd
+docker rmi httpd    ##Deletes the httpd image; used to clean up unused images.
 docker images
 ```
 
