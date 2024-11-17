@@ -37,6 +37,27 @@ docker images                ## Confirms the image is removed.
 </details>
 
   ## Task-2
+<details>
+<summary><strong>Pull an httpd image, run a container named 'webapp', stop it, and delete it</strong></summary>
+<br>
+
+```bash
+docker images                     ## Lists available images on the system; used to check image availability.
+docker ps                         ## Shows running containers; used to monitor active containers.
+docker pull httpd                 ## Downloads the httpd image from Docker Hub; used to prepare an image.
+docker images                     ## Verifies the httpd image is downloaded.
+docker run -it -d --name webapp httpd  ## Starts an httpd container in detached mode with the name 'webapp'.
+docker ps                         ## Verifies the 'webapp' container is running.
+docker stop webapp                ## Stops the running 'webapp' container; used to halt container processes.
+docker ps -a                      ## Lists all containers, including stopped ones.
+docker rm webapp                  ## Removes the stopped 'webapp' container; used to free resources.
+docker ps -a                      ## Verifies the container is removed.
+docker images                     ## Lists all images to confirm existence of the httpd image.
+docker rmi httpd                  ## Deletes the httpd image; used to clean up unused images.
+docker images                     ## Confirms the image is removed.
+```
+</details>
+
   ## Task-3
   ## Task-4
   ## Task-5
