@@ -193,12 +193,11 @@ exit                                        ## Exits the container shell.
 docker ps                                    ## Verifies the container 'webapp' is still running.
 ```
 </details>
-
-  ## Task-1
   
-# Docker-File Setup on Linux
-  ```sh
- 
+# Docker-File
+**Dockerfile is a special text file which contains software configuration to build docker images(to build customized docker image).**
+- **Dockerfile contains configuration commands like:**
+  ```
   yum install wget -y
   wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz
   yum install tar -y 
@@ -206,19 +205,79 @@ docker ps                                    ## Verifies the container 'webapp' 
   tar -zxvf apache-tomcat-9.0.91.tar.gz
   yum install java-11* -y
   sh /apache-tomcat-9.0.91/bin/startup.sh
-  ``` 
-# Hands On Docker-File Setup on Linux
-  ```sh
-  FROM amazonlinux
-  MAINTAINER "gyanaranjanmallick444@gmail.com"
-  RUN yum install wget -y
-  RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz
-  RUN yum install tar -y 
-  RUN yum install gzip -y
-  RUN tar -zxvf apache-tomcat-9.0.91.tar.gz
-  RUN yum install java-11* -y
-  RUN sh /apache-tomcat-9.0.91/bin/startup.sh
   ```
+  
+<details>
+<summary><strong>Hands On Docker-File</strong></summary>
+<br>
+  
+### Create a `Dockerfile`
+```sh
+vi Dockerfile
+```
+- **Dockerfile Content**
+```sh
+# Step 1: Use the Amazon Linux base image
+FROM amazonlinux
+
+# Step 2: Define the maintainer information
+MAINTAINER "gyanaranjanmallick444@gmail.com"
+
+# Step 3: Install necessary dependencies
+RUN yum install wget -y                  ## Install wget to download files
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.91/bin/apache-tomcat-9.0.91.tar.gz  ## Download Tomcat
+RUN yum install tar -y                   ## Install tar to extract the Tomcat archive
+RUN yum install gzip -y                  ## Install gzip for handling compressed files
+
+# Step 4: Extract the Tomcat archive
+RUN tar -zxvf apache-tomcat-9.0.91.tar.gz ## Extract Tomcat
+
+# Step 5: Install Java 11 (required by Tomcat)
+RUN yum install java-11* -y              ## Install Java 11
+
+# Step 6: Start Tomcat server
+RUN sh /apache-tomcat-9.0.91/bin/startup.sh ## Start Tomcat when the container is built
+```
+- **Build and Run the Docker Container**
+```
+# Step 1: Build the Docker image from the Dockerfile
+docker build -t tomcat-amazonlinux .      ## Builds the image with the tag 'tomcat-amazonlinux'
+
+# Step 2: Verify the available Docker images
+docker images                            ## Lists all available Docker images.
+
+# Step 3: Run the container in detached mode
+docker run -it -d --name webapp tomcat-amazonlinux  ## Runs the container in detached mode with the name 'webapp'
+
+# Step 4: List running containers
+docker ps                                ## Shows all running containers.
+
+# Step 5: Access the running container shell
+docker exec -it <container_id> /bin/bash  ## Access the container shell using the container ID.
+
+# Step 6: Navigate to the Tomcat bin directory
+cd /apache-tomcat-9.0.91/bin/             ## Navigate to the Tomcat bin directory.
+
+# Step 7: Start the Tomcat service
+sh startup.sh                            ## Starts the Tomcat service.
+
+# Step 8: Exit the container shell
+exit                                     ## Exits the container shell.
+
+# Step 9: Verify available Docker images again
+docker images                            ## Lists the images to verify the new image.
+
+# Step 10: Remove the container forcefully
+docker rm -f <container_id>              ## Force removes the container by ID.
+
+# Step 11: Remove the Docker image
+docker rmi tomcat-amazonlinux             ## Removes the 'tomcat-amazonlinux' image.
+```
+</details>
+
+
+
+# Docker-Compose
   ## Task-1
   
 # Docker Volume on Linux
