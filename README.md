@@ -81,6 +81,52 @@ docker images                           ## Confirms the image is removed.
 </details>
 
   ## Task-4
+# Pull one nginx image and run a container & take a backup(snapshot) of running container & create a docker image, push into docker hub repository
+
+```bash
+# Step 1: Check running containers
+docker ps                           ## Lists all running containers.
+
+# Step 2: Pull the nginx image
+docker pull nginx                   ## Pulls the nginx image from Docker Hub.
+
+# Step 3: Run the nginx container
+docker run -it -d nginx             ## Starts an nginx container in detached mode.
+
+# Step 4: Commit the running container to a new image
+docker commit b5ef90ae5e8c mallick17/samplenginx    ## Creates a new image 'mallick17/samplenginx' from the container.
+
+# Step 5: Check available images
+docker images                       ## Verifies the new image is created.
+
+# Step 6: Log in to Docker Hub
+docker login                        ## Logs in to Docker Hub (needed to push images).
+
+# Step 7: Push the new image to Docker Hub before pushing the image, Create dockerhub repo
+docker push mallick17/samplenginx                ## Pushes the 'samplenginx' image to Docker Hub.
+docker push mallick17/samplenginx:tagname        ## Pushes a tagged version of the image.
+
+# Step 8: Verify running containers
+docker ps                           ## Checks currently running containers.
+
+# Step 9: Remove the running container forcefully
+docker rm -f b5ef90ae5e8c           ## Deletes the container 'b5ef90ae5e8c'.
+
+# Step 10: Remove the nginx image
+docker rmi nginx                    ## Removes the nginx image if unused.
+docker rmi -f nginx                 ## Force-removes the nginx image.
+
+# Step 11: Remove the custom image locally
+docker rmi mallick17/samplenginx    ## Removes the custom image from the local system.
+
+# Step 12: Pull the custom image back from Docker Hub
+docker pull mallick17/samplenginx   ## Retrieves the 'samplenginx' image from Docker Hub.
+
+# Step 13: Log out from Docker Hub
+docker logout                       ## Logs out from Docker Hub.
+```
+</details>
+
   ## Task-5
 
 # Docker-Compose Setup on Linux
