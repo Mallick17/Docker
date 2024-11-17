@@ -13,6 +13,26 @@ Commands and Installation and Study Notes
   docker --version
   ```
   ## Task-1
+  **Pull one httpd image and run a container & stop the container and restart the container and remove the docker image.**
+  ```
+docker images
+docker ps
+docker pull httpd
+docker images
+docker run -it -d httpd
+docker ps
+docker rm container_id
+docker stop container_id
+docker ps -a
+docker start container_id
+docker stop container_id
+docker rm container_id
+docker ps -a
+docker images
+docker rmi httpd
+docker images
+```
+
   ## Task-2
   ## Task-3
   ## Task-4
