@@ -13,28 +13,26 @@ Commands and Installation and Study Notes
   docker --version
   ```
   ## Task-1
-  <details>
-<summary>
-  **Pull one httpd image and run a container & stop the container and restart the container and remove the docker image.**<summary>
-    <br>
-    
-  ```
-docker images    ##Lists available images on the system; used to check image availability.
-docker ps    ##Shows running containers; used to monitor active containers.  
-docker pull httpd    ##Downloads the httpd image from Docker Hub; used to prepare an image.
-docker images    
-docker run -it -d httpd    ##Starts an httpd container in detached interactive mode; used to deploy containers. 
-docker ps
-docker rm container_id    ##Removes a stopped container; used to free resources.
-docker stop container_id    ##Stops a running container; used to halt container processes.
-docker ps -a    ##Lists all containers (running and stopped); used for full container visibility.
-docker start container_id    ##Restarts a stopped container; used to resume operations.
-docker stop container_id
-docker rm container_id
-docker ps -a
-docker images
-docker rmi httpd    ##Deletes the httpd image; used to clean up unused images.
-docker images
+<details>
+<summary><strong>Pull an httpd image, run a container, stop the container, restart it, and remove the Docker image</strong></summary>
+<br>
+
+```bash
+docker images                ## Lists available images on the system; used to check image availability.
+docker ps                    ## Shows running containers; used to monitor active containers.  
+docker pull httpd            ## Downloads the httpd image from Docker Hub; used to prepare an image.
+docker images                ## Verifies the httpd image is downloaded.
+docker run -it -d httpd      ## Starts an httpd container in detached interactive mode; used to deploy containers. 
+docker ps                    ## Verifies the httpd container is running.
+docker stop container_id     ## Stops the running container; used to halt container processes.
+docker ps -a                 ## Lists all containers, including stopped ones.
+docker start container_id    ## Restarts the stopped container; used to resume operations.
+docker stop container_id     ## Stops the restarted container.
+docker rm container_id       ## Removes the stopped container; used to free resources.
+docker ps -a                 ## Verifies the container is removed.
+docker images                ## Lists all images to confirm existence of the httpd image.
+docker rmi httpd             ## Deletes the httpd image; used to clean up unused images.
+docker images                ## Confirms the image is removed.
 ```
 </details>
 
