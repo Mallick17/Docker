@@ -191,18 +191,7 @@ exit                                        ## Exits the container shell.
 
 # Step 19: Verify running containers
 docker ps                                    ## Verifies the container 'webapp' is still running.
-
-# Optional: View the history of commands executed
-history                                     ## Displays the history of commands executed in the terminal.
-
-
-# Docker-Compose Setup on Linux
-  ```sh
-  sudo yum install git -y
-  sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose 
-  sudo chmod +x /usr/local/bin/docker-compose
-  docker-compose --version
-  ```
+```
 </details>
 
   ## Task-1
