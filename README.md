@@ -81,7 +81,9 @@ docker images                           ## Confirms the image is removed.
 </details>
 
   ## Task-4
-# Pull one nginx image and run a container & take a backup(snapshot) of running container & create a docker image, push into docker hub repository
+<details>
+<summary><strong>Pull one nginx image and run a container & take a backup(snapshot) of running container & create a docker image, push into docker hub repository</strong></summary>
+<br>
 
 ```bash
 # Step 1: Check running containers
