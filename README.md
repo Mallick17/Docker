@@ -15,9 +15,9 @@ Commands and Installation and Study Notes
   ## Task-1
   **Pull one httpd image and run a container & stop the container and restart the container and remove the docker image.**
   ```
-docker images  ##Lists available images on the system; used to check image availability.
-docker ps
-docker pull httpd
+docker images    ##Lists available images on the system; used to check image availability.
+docker ps    ##Shows running containers; used to monitor active containers.  
+docker pull httpd    ##Downloads the ```httpd``` image from Docker Hub; used to prepare an image.
 docker images
 docker run -it -d httpd
 docker ps
