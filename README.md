@@ -13,7 +13,11 @@ Commands and Installation and Study Notes
   docker --version
   ```
   ## Task-1
-  **Pull one httpd image and run a container & stop the container and restart the container and remove the docker image.**
+  <details>
+<summary>
+  **Pull one httpd image and run a container & stop the container and restart the container and remove the docker image.**<summary>
+    <br>
+    
   ```
 docker images    ##Lists available images on the system; used to check image availability.
 docker ps    ##Shows running containers; used to monitor active containers.  
@@ -32,6 +36,7 @@ docker images
 docker rmi httpd    ##Deletes the httpd image; used to clean up unused images.
 docker images
 ```
+</details>
 
   ## Task-2
   ## Task-3
