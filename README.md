@@ -59,6 +59,27 @@ docker images                     ## Confirms the image is removed.
 </details>
 
   ## Task-3
+<details>
+<summary><strong>Pull an Nginx image, run a container on port 8000, and manage it</strong></summary>
+<br>
+
+```bash
+docker images                           ## Lists available images on the system; used to check image availability.
+docker ps                               ## Shows running containers; used to monitor active containers.
+docker pull nginx                       ## Downloads the nginx image from Docker Hub; used to prepare an image.
+docker images                           ## Verifies the nginx image is downloaded.
+docker run -it -d -p 8000:80 nginx      ## Starts an Nginx container in detached mode with port 8000 mapped to container's port 80.
+docker ps                               ## Verifies the Nginx container is running and port 8000 is mapped.
+docker stop container_id                ## Stops the running Nginx container; used to halt container processes.
+docker ps -a                            ## Lists all containers, including stopped ones.
+docker rm container_id                  ## Removes the stopped Nginx container; used to free resources.
+docker ps -a                            ## Verifies the container is removed.
+docker images                           ## Lists all images to confirm existence of the nginx image.
+docker rmi nginx                        ## Deletes the nginx image; used to clean up unused images.
+docker images                           ## Confirms the image is removed.
+```
+</details>
+
   ## Task-4
   ## Task-5
 
