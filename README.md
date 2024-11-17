@@ -130,6 +130,71 @@ docker logout                       ## Logs out from Docker Hub.
 </details>
 
   ## Task-5
+<details>
+<summary><strong>Pull one amazon Linux image and run the container with the name called webapp & install tomcat & start the tomcat service.</strong></summary>
+<br>
+
+```bash
+# Step 1: Pull the Amazon Linux image
+docker pull amazonlinux                      ## Downloads the Amazon Linux image from Docker Hub.
+
+# Step 2: Verify available images
+docker images                                ## Lists the available Docker images.
+
+# Step 3: Run the container in detached mode with the name 'webapp'
+docker run -it -d --name webapp amazonlinux  ## Starts the container 'webapp' in detached mode.
+
+# Step 4: Verify running containers
+docker ps                                    ## Lists running containers, confirms 'webapp' is active.
+
+# Step 5: Access the running container's shell
+docker exec -it 6a075d027f6f /bin/bash        ## Opens a bash shell inside the running 'webapp' container.
+
+# Step 6: Install wget inside the container
+yum install wget -y                          ## Installs wget to download files inside the container.
+
+# Step 7: Download Tomcat from Apache servers
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97.tar.gz   ## Downloads the Tomcat tarball.
+
+# Step 8: Install tar to extract the Tomcat archive
+yum install tar -y                           ## Installs tar utility to extract Tomcat tarball.
+
+# Step 9: Install gzip to handle compressed files (if not installed)
+yum install gzip -y                          ## Installs gzip to handle compressed archives.
+
+# Step 10: Extract the Tomcat archive
+tar -zxvf apache-tomcat-9.0.97.tar.gz        ## Extracts the Tomcat tarball.
+
+# Step 11: Verify extracted files
+ls                                          ## Verifies that the files have been extracted.
+
+# Step 12: Navigate into the Tomcat directory
+cd apache-tomcat-9.0.97                     ## Changes directory to the extracted Tomcat folder.
+
+# Step 13: Verify contents of the Tomcat folder
+ls                                          ## Lists contents of the Tomcat directory.
+
+# Step 14: Navigate to the bin directory
+cd bin/                                     ## Changes directory to Tomcat's bin folder.
+
+# Step 15: Verify contents in the bin directory
+ls                                          ## Lists contents of the bin directory.
+
+# Step 16: Install Java 11 (required by Tomcat)
+yum install java-11* -y                      ## Installs Java 11, required for running Tomcat.
+
+# Step 17: Start Tomcat service
+sh startup.sh                               ## Starts the Tomcat server using the startup script.
+
+# Step 18: Exit the container shell
+exit                                        ## Exits the container shell.
+
+# Step 19: Verify running containers
+docker ps                                    ## Verifies the container 'webapp' is still running.
+
+# Optional: View the history of commands executed
+history                                     ## Displays the history of commands executed in the terminal.
+
 
 # Docker-Compose Setup on Linux
   ```sh
@@ -138,6 +203,8 @@ docker logout                       ## Logs out from Docker Hub.
   sudo chmod +x /usr/local/bin/docker-compose
   docker-compose --version
   ```
+</details>
+
   ## Task-1
   
 # Docker-File Setup on Linux
