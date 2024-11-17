@@ -211,7 +211,7 @@ docker ps                                    ## Verifies the container 'webapp' 
 <summary><strong>Hands On Docker-File</strong></summary>
 <br>
   
-### Create a `Dockerfile`
+- **Create a `Dockerfile`**
 ```sh
 vi Dockerfile
 ```
