@@ -1,7 +1,7 @@
 # Docker
 Commands and Installation and Study Notes
 ### Installation of Docker Commands
-# Docker Setup on Linux
+# Docker & Docker-Compose Setup on Linux
   ```sh
   sudo yum update -y
   sudo yum search docker
@@ -11,6 +11,10 @@ Commands and Installation and Study Notes
   sudo systemctl start docker.service
   sudo systemctl status docker.service
   docker --version
+  sudo yum install git -y
+  sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+  docker-compose --version
   ```
   ## Task-1
 <details>
