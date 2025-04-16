@@ -201,6 +201,8 @@ exit                                        ## Exits the container shell.
 docker ps                                    ## Verifies the container 'webapp' is still running.
 ```
 </details>
+
+---
   
 # Docker-File
 **Dockerfile is a special text file which contains software configuration to build docker images(to build customized docker image).**
