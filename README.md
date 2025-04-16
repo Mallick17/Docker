@@ -1,5 +1,4 @@
 # Docker
-Commands and Installation and Study Notes
 ### Installation of Docker Commands
 # Docker & Docker-Compose Setup on Amazon Linux
   ```sh
