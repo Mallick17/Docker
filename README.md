@@ -15,7 +15,7 @@ docker run -d --name app2 --network mynetwork busybox
 ```
 - `app2` can ping `app1` by name.
 
-Create isolated networks with:
+Example: 2 Create isolated networks with:
 ```bash
 docker network create -d bridge my-net
 docker run --network=my-net -itd --name=container3 busybox
