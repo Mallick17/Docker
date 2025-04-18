@@ -7,7 +7,14 @@ Docker is an open platform that uses containerization to package applications an
 Docker is an open-source platform that automates the deployment of applications inside containers. 
 - Containers are lightweight, portable, and isolated environments that bundle an application with its dependencies—code, runtime, libraries, and system tools. 
 - This ensures consistent behavior across different environments, solving the common issue of applications working on one machine but failing on another. 
-- For professionals, Docker streamlines development, testing, and production workflows, supporting modern practices like microservices and cloud-native development for developing, shipping, and running applications, enabling separation of applications from infrastructure to accelerate delivery cycles. 
+- For professionals, Docker streamlines development, testing, and production workflows, supporting modern practices like microservices and cloud-native development for developing, shipping, and running applications, enabling separation of applications from infrastructure to accelerate delivery cycles.
+
+
+| **Concept**                  | **Description**                                      | **Key Feature**                                             |
+|-----------------------------|------------------------------------------------------|-------------------------------------------------------------|
+| **Images**                  | Read-only templates for containers.                  | Built from Dockerfiles, stored in registries.               |
+| **Dockerfiles**             | Text files with instructions to build images.        | Each instruction creates a layer for efficiency.            |
+| **Containers**              | Runnable instances of images.                        | Isolated, ephemeral unless data is persisted.               |
 
 ### 1.2 Dockerfiles
 - Definition: A Dockerfile is a text‑based script defining a series of instructions to build a Docker image. It defines the environment and setup process.
