@@ -46,3 +46,65 @@ CMD ["World"]
 ```
 - `docker run myimage` outputs `Hello World`.
 - `docker run myimage Universe` outputs `Hello Universe`.
+
+---
+
+## 🧪 Example Scenarios
+
+### **1. Using `CMD` Alone**
+**Dockerfile:**
+```Dockerfile
+FROM ubuntu
+CMD ["echo", "Hello from CMD"]
+```
+
+**Run:**
+```bash
+docker build -t cmd-example .
+docker run cmd-example
+# Output: Hello from CMD
+
+docker run cmd-example echo "Overridden"
+# Output: Overridden
+```
+- `CMD` was replaced by the new arguments.
+
+---
+
+### **2. Using `ENTRYPOINT` Alone**
+**Dockerfile:**
+```Dockerfile
+FROM ubuntu
+ENTRYPOINT ["echo"]
+```
+
+**Run:**
+```bash
+docker build -t entrypoint-example .
+docker run entrypoint-example "Hello from ENTRYPOINT"
+# Output: Hello from ENTRYPOINT
+```
+- `ENTRYPOINT` stays fixed. Arguments get appended.
+
+---
+
+### **3. Combining `ENTRYPOINT` + `CMD`**
+**Dockerfile:**
+```Dockerfile
+FROM ubuntu
+ENTRYPOINT ["echo"]
+CMD ["Default message"]
+```
+
+**Run:**
+```bash
+docker build -t combo-example .
+docker run combo-example
+# Output: Default message
+
+docker run combo-example "Custom message"
+# Output: Custom message
+```
+- You get default behavior if no arguments passed, and override when needed.
+
+---
