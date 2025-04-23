@@ -8,6 +8,7 @@ The CMD and ENTRYPOINT instructions in a Dockerfile define what command runs whe
 | **CMD**         | Fully replaced by `docker run` arguments.        | Default commands or parameters.             |
 | **ENTRYPOINT**  | Arguments are appended; command stays fixed.     | Containers acting as specific executables.  |
 
+![image](https://github.com/user-attachments/assets/aae2bcba-5e7e-4a8c-84fc-9ebb4eb6e000)
 
 ### `CMD`
 **Purpose**: Provides default commands or parameters for a container. These can be overridden when running docker run.
