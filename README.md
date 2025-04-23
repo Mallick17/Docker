@@ -2,6 +2,26 @@
 Containers are ephemeral, meaning data is lost when they stop unless persisted. Docker offers volumes and bind mounts for data persistence.
 - Docker supports various types of storage mounts to persist and share data:
 
+Here’s your **Docker Volumes vs. Bind Mounts** documentation formatted in a structured comparison table:
+
+| **Aspect**           | **Docker Volumes**                                                                                             | **Bind Mounts**                                                                                         |
+|----------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **Definition**        | Storage managed by Docker for persisting container data.                                                      | Host filesystem path (file/directory) mounted directly into a container.                                 |
+| **Management**        | Fully managed by Docker; supports creation, deletion, and updates via CLI/API.                                | Not managed by Docker; user must manage host filesystem paths.                                           |
+| **Location**          | Stored in Docker’s directory (e.g., `/var/lib/docker/volumes/` on Linux).                                     | Tied to a user-specified host path (e.g., `/host/path:/container/path`).                                 |
+| **Sharing**           | Easily shared among multiple containers, even across different hosts.                                         | Specific to the host’s filesystem; not easily shared across hosts.                                       |
+| **Performance**       | Optimized for Docker; generally faster due to container-specific design.                                      | May have performance overhead due to reliance on host filesystem.                                        |
+| **Security**          | Better isolation; reduces exposure to host filesystem, enhancing security.                                    | Less secure; direct host filesystem access can pose risks if misconfigured.                              |
+| **Creation**          | Named volumes created explicitly (`docker volume create`); anonymous volumes auto-created.                     | Auto-created as directories if host path doesn’t exist (with `-v` flag).                                 |
+| **Persistence**       | Persists until explicitly removed (`docker volume rm` or `docker volume prune`).                              | Persists on host filesystem, independent of container lifecycle.                                         |
+| **Compatibility**     | Compatible with Linux and Windows containers; platform-agnostic.                                               | May have limitations based on host OS and filesystem structure.                                          |
+| **Backup/Transfer**   | Centralized storage simplifies backup and migration (e.g., copy `/var/lib/docker/volumes/`).                   | Requires manual backup; host path dependency complicates transfers.                                      |
+| **Portability**       | Highly portable; volumes can be moved to other hosts with Docker support.                                     | Less portable; depends on identical host filesystem structure.                                           |
+| **Use Cases**         | Production environments, database storage, shared data across containers.                                     | Development/testing, sharing host files (e.g., code, configs) with containers.                           |
+| **CLI Flags**         | `--mount type=volume,source=<volume-name>,target=<container-path>`<br>`-v <volume-name>:<container-path>`     | `--mount type=bind,source=<host-path>,target=<container-path>`<br>`-v <host-path>:<container-path>`     |
+| **Volume Drivers**    | Supports volume drivers for remote/cloud storage (e.g., NFS, AWS EBS).                                        | No support for volume drivers; limited to local host filesystem.                                         |
+
+
 **Docker Storage Options Comparison Table**:
 
 | **Type**         | **Managed By** | **Portability** | **Best For**                            | **Example Command**                                                                 |
